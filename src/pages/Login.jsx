@@ -47,7 +47,7 @@ const Login = () => {
                     <span className='text-purple-700'>{`<`}</span>Deku/<span className='text-slate-600'>{`>`}</span>
                 </Link>
             </div>
-            <div className='flex flex-col md:rounded-xl px-5 py-7 bg-slate-800 md:w-[450px] h-full w-full md:min-h-80'>
+            <div className='flex flex-col md:rounded-xl px-5 py-7 bg-slate-800 md:w-[450px] sm:w-[400px] h-full w-full md:min-h-80'>
                 <h1 className='font-semibold text-2xl mb-5'>Sign in to your account</h1>
                 <form onSubmit={handleSubmit} >
                     <label className='block tracking-tight mb-3'>
