@@ -16,8 +16,8 @@ const Contacts = ({ contacts, handleSelectContact, currContact, isOnline, contac
   const handleAddContact = async (e) => {
     e.preventDefault()
     try {
-      const contact = await axios.post('http://localhost:8000/user/findUser', { id: addContact })
-      console.log(contact.data.user)
+      const contact = await axios.post('https://chat-app-backend-ojv8.onrender.com/user/findUser', { id: addContact })
+      // console.log(contact.data.user)
       const contactInfo = contact.data.user
       if (!contactInfo) {
         console.error('No Contact Found!')
@@ -26,7 +26,7 @@ const Contacts = ({ contacts, handleSelectContact, currContact, isOnline, contac
       console.log({ userId })
       console.log({ contactId: contactInfo._id, username: contactInfo.username, avatar: contactInfo.avatar })
 
-      const res = await axios.post('http://localhost:8000/contact/add', {
+      const res = await axios.post('https://chat-app-backend-ojv8.onrender.com/contact/add', {
         'userId': userId,
         'contact': { contactId: contactInfo._id, username: contactInfo.username, avatar: contactInfo.avatar }
       })

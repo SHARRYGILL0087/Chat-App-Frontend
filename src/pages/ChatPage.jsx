@@ -7,7 +7,10 @@ import { useState } from 'react'
 import { GlobalState } from '../GlobalStates'
 
 
-const socket = io('http://localhost:8000')
+const socket = io('https://chat-app-backend-ojv8.onrender.com', {
+  withCredentials: true,
+  transports: ['websocket']
+})
 
 
 const ChatPage = () => {
@@ -27,13 +30,13 @@ const ChatPage = () => {
   // console.log(contacts)
 
   useEffect(() => {
-    if(contactsList.length !== 0){
+    if (contactsList.length !== 0) {
       console.log(contactsList)
       setContacts(contactsList)
       setCurrContact(contactsList[0])
     }
   }, [contactsList])
-   
+
 
   // console.log('ussr', user._id)
   // console.log('cont', currContact.contantId)
@@ -41,14 +44,14 @@ const ChatPage = () => {
 
 
   const getroomId = () => {
-    const roomid = [user._id , currContact.contactId].sort().join('_')
+    const roomid = [user._id, currContact.contactId].sort().join('_')
     console.log(roomid)
     setRoomId(roomid)
   }
 
   useEffect(() => {
-    if(user?._id && currContact?.contactId)     getroomId()
-  }, [user,currContact])
+    if (user?._id && currContact?.contactId) getroomId()
+  }, [user, currContact])
 
 
   const toggelContactPage = () => {

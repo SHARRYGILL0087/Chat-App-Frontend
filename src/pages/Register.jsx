@@ -23,7 +23,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('http://localhost:8000/user/register', { ...dataform }, { withCredentials: true })
+      const res = await axios.post('https://chat-app-backend-ojv8.onrender.com/user/register', { ...dataform }, { withCredentials: true })
       console.log("result -> ", res.data)
       localStorage.setItem('accessToken', res.data?.accessToken)
       localStorage.setItem('refreshToken', res.data?.refreshToken)

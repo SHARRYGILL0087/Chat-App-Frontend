@@ -13,7 +13,7 @@ const Chats = ({ currContact, socket, isOnline, setIsOnline, toggelContactPage, 
 
     const getMessages  = async ()=>{
       try {
-        const res = await axios.post('http://localhost:8000/message/get' , {roomId})
+        const res = await axios.post('https://chat-app-backend-ojv8.onrender.com/message/get' , {roomId})
         // console.log(res.data)
         setmessages(res.data.messages)
       } catch (error) {
@@ -65,7 +65,7 @@ const Chats = ({ currContact, socket, isOnline, setIsOnline, toggelContactPage, 
   const handleSendMessage = async () => {
     try {
       socket.emit('sendMessage', { senderId: user._id, receiverId: currContact.contactId, roomId, message: message })
-      const res = await axios.post('http://localhost:8000/message/sendmessage', { senderId: user._id, roomId, receiverId: currContact.contactId, message: message })
+      const res = await axios.post('https://chat-app-backend-ojv8.onrender.com/message/sendmessage', { senderId: user._id, roomId, receiverId: currContact.contactId, message: message })
       setMessage('')
     } catch (error) {
       console.log(error.message)

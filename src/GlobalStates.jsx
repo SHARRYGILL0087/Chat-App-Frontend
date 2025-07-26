@@ -26,7 +26,7 @@ const DataProvider = ({ children }) => {
 
     const refreshtoken = async (rf_token) => {
         try {
-            const res = await axios.post('http://localhost:8000/user/refresh_token', {
+            const res = await axios.post('https://chat-app-backend-ojv8.onrender.com/user/refresh_token', {
                 rf_token
             });
 
@@ -66,6 +66,7 @@ const DataProvider = ({ children }) => {
 
     useEffect(() => {
         if (userId !== '') {
+            // console.log('userId ->', userId)
             ContactApi(userId).then((data) => {
                 // console.log(data)
                 if (!data) {

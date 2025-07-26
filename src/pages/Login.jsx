@@ -22,7 +22,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post('http://localhost:8000/user/login', { ...dataform }, { withCredentials: true })
+            const res = await axios.post('https://chat-app-backend-ojv8.onrender.com/user/login', { ...dataform }, { withCredentials: true })
            
             console.log("result -> ", res.data)
 
