@@ -65,7 +65,7 @@ const ChatPage = () => {
 
 
   return (
-    <div className='flex w-[94%] lg:w-[92%] bg-slate-800 h-screen'>
+    <div className='flex w-[92%] lg:w-[92%] bg-slate-800 h-screen'>
       <Contacts contacts={contacts} handleSelectContact={handleSelectContact} currContact={currContact} isOnline={isOnline} contactPage={contactPage} />
       <Chats currContact={currContact} user={user} roomId={roomId} socket={socket} isOnline={isOnline} setIsOnline={setIsOnline} toggelContactPage={toggelContactPage} contactPage={contactPage} />
     </div>
