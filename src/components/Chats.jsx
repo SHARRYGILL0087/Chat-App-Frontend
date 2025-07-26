@@ -84,7 +84,7 @@ const Chats = ({ currContact, socket, isOnline, setIsOnline, toggelContactPage, 
     <div className={`${contactPage ? 'hidden' : 'block w-full'} md:block relative md:w-[70%] text-white my-4 py-2`}>
       <div className='w-full '>
         <div className="ml-3 flex gap-3 items-center cursor-pointer">
-          <img src={back} alt="back" onClick={toggelContactPage} className="cursor-pointer block sm:hidden" />
+          <img src={back} alt="back" onClick={toggelContactPage} className="cursor-pointer block md:hidden" />
           <img src={currContact.avatar} className="rounded-full text-lg w-[35px] h-[35px]" alt="Avatar" />
           <span>{currContact.username}</span>
           {isOnline && <span className='p-1 rounded-full bg-green-400'></span>}
