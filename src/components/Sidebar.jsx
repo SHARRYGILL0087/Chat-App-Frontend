@@ -20,7 +20,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className=' bg-gray-950 text-white w-[8%] h-screen flex flex-col py-4 px-1.5'>
+    <div className=' bg-gray-950 text-white w-[8%] sm:w-[6%] lg:w-[8%] h-screen flex flex-col py-4 px-1.5'>
       <div className='flex items-center gap-2'>
         <img src={logo} alt="Logo" className='w-10 rounded-2xl' />
         <span className='hidden lg:block text-white font-bold text-lg'>Deku</span>
