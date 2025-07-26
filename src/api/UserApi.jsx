@@ -5,7 +5,7 @@ import axios from "axios"
 const UserApi = async (id) => {
     // console.log(id)
     try {
-        const res = await axios.post(`http://localhost:8000/user/userinfo` , {id})
+        const res = await axios.post(`https://chat-app-backend-ojv8.onrender.com/user/userinfo` , {id})
         // console.log('data',res.data.user)
         // console.log('User Obtainer!')
         return res.data.user
