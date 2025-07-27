@@ -97,7 +97,7 @@ const Chats = ({ currContact, socket, isOnline, setIsOnline, toggelContactPage, 
         {messages.map((item, idx) => {
           return (
             <div key={idx} className='w-full clear-both'>
-              <span className={`${item.senderId === user._id ? 'float-left' : 'float-right'} bg-gray-600 rounded-xl mx-2 py-1.5 px-2`}>{item.message}</span>
+              <span className={`${item.senderId === user._id ? 'float-right bg-gray-600' : 'float-left bg-gray-700'} rounded-xl mx-2 py-1.5 px-2`}>{item.message}</span>
             </div>
           )
         })}
